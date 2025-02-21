@@ -1,5 +1,33 @@
 import { defineConfig } from 'vitepress'
 
+import { generateSidebar } from "vitepress-sidebar";  // 引入vitepress-sidebar自动生成侧边栏插件
+
+const vitepressSidebarOptions = [
+  {
+    documentRootPath: 'docs',
+    scanStartPath: 'notes',
+    basePath: '/notes/',
+    resolvePath: '/notes/',
+    useTitleFromFileHeading: true,
+    collapsed: false, //折叠组关闭
+    collapseDepth: 3, //折叠组2级菜单
+    removePrefixAfterOrdering: true, //删除前缀，必须与prefixSeparator一起使用
+    prefixSeparator: "_", //删除前缀的符号
+  },
+  {
+    documentRootPath: 'docs',
+    basePath: '/services/',
+    scanStartPath: 'services',
+    resolvePath: '/services/',
+    useTitleFromFrontmatter: true,
+    collapsed: false, //折叠组关闭
+    collapseDepth: 2, //折叠组2级菜单
+    removePrefixAfterOrdering: true, //删除前缀，必须与prefixSeparator一起使用
+    prefixSeparator: "_", //删除前缀的符号
+  }
+
+];
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "My Awesome Project",
@@ -10,18 +38,20 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Examples', link: '/notes/' },
+      { text: 'Services', link: '/services/' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    // sidebar: [
+    //   {
+    //     text: 'Examples',
+    //     items: [
+    //       { text: 'Markdown Examples', link: '/markdown-examples' },
+    //       { text: 'Runtime API Examples', link: '/api-examples' }
+    //     ]
+    //   }
+    // ],
+    sidebar: generateSidebar(vitepressSidebarOptions),  // 自动生成侧边栏
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
