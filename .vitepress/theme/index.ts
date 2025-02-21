@@ -1,6 +1,8 @@
 // .vitepress/theme/index.ts
 import DefaultTheme from "vitepress/theme";
 
+import "./style/index.css"; //引入自定义的样式
+
 // 图片缩放插件
 import mediumZoom from 'medium-zoom';
 import { onMounted, watch, nextTick } from 'vue';
