@@ -20,6 +20,7 @@
   "homepage": "https://github.com/oopsunix/blog#readme",
   "description": "",
   "devDependencies": {
+    "medium-zoom": "^1.1.0",
     "vitepress": "^1.6.3",
     "vitepress-sidebar": "^1.31.0"
   }

@@ -1,0 +1,9 @@
+/* .vitepress/theme/style/var.css */
+
+/* 图片缩放插件样式调整，防止背后没有遮盖。 */
+.medium-zoom-overlay {
+    z-index: 30;
+  }
+  .medium-zoom-image {
+    z-index: 9999 !important; /* 给的值是21，但是实测盖不住，直接999 */
+  }
