@@ -55,6 +55,20 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+    ],
+
+    footer: {
+      message: `Released under the MIT License.`,
+      // message: `<a href="https://beian.miit.gov.cn/" target="_blank">京ICP备XXXXXXXX号</a>`,
+      copyright: `Copyright © ${new Date().getFullYear()} AKAMS.CN`,
+    },
+
+    lastUpdated: {
+      text: "最后更新于",
+      formatOptions: {
+        dateStyle: "short", // full
+        timeStyle: "short", // medium
+      },
+    },
   }
 })
